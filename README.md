@@ -8,6 +8,8 @@ pinned: false
 app_port: 8000
 ---
 
+hosted on hugging face space : https://anuj-panthri-imagine-color.hf.space/
+
 # Imagine-Color
 
 An RNN based model which is used to generate color from text.
