@@ -17,6 +17,7 @@ FROM tensorflow/tensorflow
 
 EXPOSE 8000
 COPY ./DjangoWeb/ /app 
+COPY ./models/ /app/models/
 WORKDIR /app 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt --no-cache-dir
