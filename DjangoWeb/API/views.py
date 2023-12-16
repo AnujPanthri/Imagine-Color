@@ -10,9 +10,8 @@ model=Colgen1(model_dir)
 # Create your views here.
 @csrf_exempt
 def generate(request):
-    if request.method=='GET':
-        return HttpResponse("GET method not allowed")
-    elif request.method=='POST':
+    
+    if request.method=='POST':
         received_data = json.loads(request.body.decode("utf-8"))
         print(received_data)
         
@@ -24,3 +23,5 @@ def generate(request):
             "colors":out
         }
         return HttpResponse(json.dumps(data))
+    
+    return HttpResponse("Working")
