@@ -16,7 +16,7 @@ function createColorCard(colorname,color){
     card.innerHTML=`
         <div class="card-color" style='background:${color}'>
             <i class="fa-solid fa-copy card-copy-btn"
-             onclick="copyToClipboard(this.closest('.card').dataset.color);addNotification('Copied !','success');"
+             onclick="copyToClipboard(this.closest('.card').dataset.color);addNotification('Copied !',1);"
 
              ></i>
             <i class="fa-solid fa-heart card-like-btn"></i>
@@ -27,17 +27,17 @@ function createColorCard(colorname,color){
     colors_section.prepend(card);
 }
 
-// createColorCard("blue");
-// createColorCard("red");
-// createColorCard("green");
-// createColorCard("blue");
-// createColorCard("red");
-// createColorCard("green");
 
 function generateColor(){
     color_name = search_input.value.trim();
-    if(color_name=="")  return;
-    if(color_name.length>200)   return;
+    if(color_name==""){
+        addNotification("Empty",3);
+        return;
+    } 
+    if(color_name.length>200){
+        addNotification("Too long",3);
+        return;
+    }   
 
     data = {
         "color_names":[color_name],
@@ -76,11 +76,11 @@ function addNotification(msg,type){
 
     var toast = document.createElement("div");
     toast.className = 'toast';
-    if(type=="success"){
-        toast.innerHTML=`<i class="fa-solid fa-check"></i>`;
+    if(type==1){
+        toast.innerHTML=`<i class="fa-solid fa-check" style='background:#52E62B'></i>`;
     }
-    else if(type=="error"){
-        toast.innerHTML=`<i class="fa-solid fa-cross"></i>`;
+    else if(type==3){
+        toast.innerHTML=`<i class="fa-solid fa-close" style='background:red'></i>`;
     }
     toast.innerHTML+=`<span>${msg}</span>`;
     toast_container.append(toast);
