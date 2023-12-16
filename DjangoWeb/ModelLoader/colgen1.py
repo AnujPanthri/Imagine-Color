@@ -29,14 +29,15 @@ class Colgen1(ModelBaseClass):
 
         return np.r_[padding,one_hot_vectors] if len(padding)>0 else one_hot_vectors
 
-    def preprocess(self,names):
+    def preprocess(self,names:list[str]):
         """ names: [name,name,name,...] """
         
         max_num_tokens=0
         one_hots_list = []
 
         for name in names:
-            name = name.lower()
+            name = name.lower() # convert to lowercase
+            name = "".join([char if char.isalnum() else " " for char in name])  # remove special characters
             tokens = self.tokenize(name)
             one_hot_vectors = self.one_hot_encode(tokens,len(self.TOKENS))
             if len(tokens)>max_num_tokens:   max_num_tokens=len(tokens)

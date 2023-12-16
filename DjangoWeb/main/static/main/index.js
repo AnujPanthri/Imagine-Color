@@ -54,7 +54,7 @@ function generateColor(){
         body:JSON.stringify(data),
     }).then(response=>response.json()).then((res)=>{
         // create card for it
-        createColorCard(color_name,res['colors'][0]);
+        createColorCard(res['color_names'][0],res['colors'][0]);
     })
 }
 

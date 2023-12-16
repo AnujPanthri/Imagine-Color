@@ -22,6 +22,7 @@ An RNN based model which is used to generate color from text.
 
 - [X] Make a simple Model (**colgen-1**) 
 - Make it based on character level tokenization
+- It ignores special characters and replace them with a " "
 - [ ] Model with word-embedding (**colgen-2**) 
 - Make it based on word level tokenization
 - don't use precalculated word embeddings
@@ -32,6 +33,7 @@ An RNN based model which is used to generate color from text.
 
 - [X] Basic UI
 - [X] Generate Color Functionality
+- [X] Add Notifications
 - [ ] Save old color which are liked
 - [ ] Add search functionality
 - [ ] Add API endpoints

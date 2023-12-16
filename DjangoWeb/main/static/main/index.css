@@ -7,12 +7,17 @@
 html,body{
     min-height:100%;
     width:100%;
-    background: linear-gradient(45deg ,#333399,#a9ff00);
 }
 body{
     position: absolute;
     top:0;
     left:0;
+    /* background: linear-gradient(45deg ,#333399,#a9ff00); */
+    /* background: linear-gradient(45deg, #ff7e00, #000000, #3300ff); */
+    /* background: linear-gradient(0deg,#180077,#1c1c1c,#a9006b); */
+    background: linear-gradient(to right, #616161, #0e0101);
+    background-size: 200% 200%;
+    
 }
 
 #toast_container{
@@ -47,11 +52,12 @@ body{
     margin-inline: 20px;
     background-color: #a9ff00;
     padding:0.5rem;
+    aspect-ratio: 1;
     border-radius: 50px;
 }
 
 #main_container{
-    background-color: #ffffff4d;
+    background-color: #ffffff1a;
     box-shadow: 1px 1px 20px -10px #000;
     /* height:100%; */
     margin: 1.2rem;
@@ -66,6 +72,7 @@ h2{
     width: fit-content;
     margin-inline: auto ;
     font-size:2rem;
+    color:#fff;
 }
 
 #search_section{
@@ -76,10 +83,11 @@ h2{
 #search_input{
     outline:none;
     border:none;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #fff;
     font-size:inherit;
     background-color: transparent;
     padding:0.3rem;
+    color: #fff;
 }
 
 input[type='button']{
