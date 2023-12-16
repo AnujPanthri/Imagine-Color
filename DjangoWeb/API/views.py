@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from ModelLoader import Colgen1
 
-model_dir="models/colgen1/"
+model_dir="models/colgen1/v2/"
 model=Colgen1(model_dir)
 
 # Create your views here.
